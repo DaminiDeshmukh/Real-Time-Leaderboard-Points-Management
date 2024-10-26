@@ -1,14 +1,32 @@
 {
   "version": 2,
-  "functions": {
-    "src/index.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "routes": [
+  "builds": [
     {
-      "src": "/api/(.*)",
-      "dest": "src/index.js"
+      "src": "src/index.js",
+      "use": "@vercel/node"
     }
   ],
+  "routes": [
+    {
+      "src": "/api/auth/v1/(.*)",
+      "dest": "/src/routes/auth.routes.js"
+    },
+    {
+      "src": "/api/user/v1/(.*)",
+      "dest": "/src/routes/user.routes.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/src/index.js"
+    }
+  ],
+  "env": {
+    "MONGO_URI": "@mongo_uri",  // Set this in Vercel environment variables
+    "SECRET_KEY": "@secret_key"  // Set this in Vercel environment variables
+  },
+  "functions": {
+    "api/**/*.js": {
+      "maxDuration": 10 // Adjust as necessary for your needs
+    }
+  }
 }
