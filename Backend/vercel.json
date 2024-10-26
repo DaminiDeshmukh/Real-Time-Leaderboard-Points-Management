@@ -20,10 +20,7 @@
       "dest": "/src/index.js"
     }
   ],
-  "env": {
-    "MONGO_URI": "@mongo_uri",  // Set this in Vercel environment variables
-    "SECRET_KEY": "@secret_key"  // Set this in Vercel environment variables
-  },
+  
   "functions": {
     "api/**/*.js": {
       "maxDuration": 10 // Adjust as necessary for your needs
