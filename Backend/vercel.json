@@ -21,9 +21,5 @@
     }
   ],
   
-  "functions": {
-    "api/**/*.js": {
-      "maxDuration": 10 // Adjust as necessary for your needs
-    }
-  }
+  
 }
