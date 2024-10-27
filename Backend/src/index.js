@@ -14,7 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'https://real-time-leaderboard-points-management-ygiy-rh8ec3do8.vercel.app/login', // Replace with the frontend's URL (React app)
+    origin: 'https://real-time-leaderboard-points-management-ygiy.vercel.app', // Replace with the frontend's URL (React app)
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'], // Allowed methods
     credentials: true
   })
